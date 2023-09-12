@@ -25,18 +25,18 @@ ThemeData _buildShrineTheme() {
   final ThemeData base = ThemeData.light(useMaterial3: true);
   return base.copyWith(
     colorScheme: base.colorScheme.copyWith(
-      //primary: kShrinePink100,
-      primary: kShrinePurple,
+      primary: kShrinePink100,
+      //primary: kShrinePurple,
       onPrimary: kShrineBrown900,
-      //secondary: kShrineBrown900,
-      secondary: kShrinePurple,
+      secondary: kShrineBrown900,
+      //secondary: kShrinePurple,
 
       error: kShrineErrorRed,
     ),
     textTheme: _buildShrineTextTheme(base.textTheme),
     textSelectionTheme: const TextSelectionThemeData(
-      //selectionColor: kShrinePink100,
-      selectionColor: kShrinePurple,
+      selectionColor: kShrinePink100,
+      //selectionColor: kShrinePurple,
 
     ),
     inputDecorationTheme: const InputDecorationTheme(
@@ -44,14 +44,14 @@ ThemeData _buildShrineTheme() {
       focusedBorder: CutCornersBorder(
         borderSide: BorderSide(
           width: 2.0,
-         // color: kShrineBrown900,
-          color: kShrinePurple,
+         color: kShrineBrown900,
+          //color: kShrinePurple,
 
         ),
       ),
       floatingLabelStyle: TextStyle(
-        //color: kShrineBrown900,
-        color: kShrinePurple,
+        color: kShrineBrown900,
+        //color: kShrinePurple,
 
       ),
     ),

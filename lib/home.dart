@@ -123,15 +123,16 @@ class HomePage extends StatelessWidget {
         title: const Text('SHRINE'),
       ),
       body:
-      AsymmetricView(
+     /* AsymmetricView(
+
         products: ProductsRepository.loadProducts(Category.all),
-      )
-      /* GridView.count(
+      )*/
+       GridView.count(
         crossAxisCount: 2,
         padding: const EdgeInsets.all(16.0),
         childAspectRatio: 8.0 / 9.0,
         children:  _buildGridCards(context),
-      )*/,
+      ),
       resizeToAvoidBottomInset: false,
     );
   }

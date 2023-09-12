@@ -77,8 +77,8 @@ class OneProductCardColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: Replace Column with a ListView (104)
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
+    return ListView(
+     // mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
         ProductCard(
           product: product,
