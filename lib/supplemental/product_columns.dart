@@ -68,7 +68,7 @@ class TwoProductCardColumn extends StatelessWidget {
   }
 }
 
-class OneProductCardColumn extends StatelessWidget {
+/*class OneProductCardColumn extends StatelessWidget {
   const OneProductCardColumn({required this.product, Key? key})
       : super(key: key);
 
@@ -86,6 +86,35 @@ class OneProductCardColumn extends StatelessWidget {
         const SizedBox(
           height: 40.0,
         ),
+      ],
+    );
+  }
+}*/
+
+class OneProductCardColumn extends StatelessWidget {
+  const OneProductCardColumn({required this.product, Key? key}) : super(key: key);
+
+  final Product product;
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: Replace Column with a ListView (104)
+    return ListView(
+      physics: const ClampingScrollPhysics(),
+      reverse: true,
+      children: <Widget>[
+        ConstrainedBox(
+          constraints: const BoxConstraints(
+            maxWidth: 550,
+          ),
+          child: ProductCard(
+            product: product,
+          ),
+        ),
+        const SizedBox(
+          height: 40.0,
+        ),
+
       ],
     );
   }

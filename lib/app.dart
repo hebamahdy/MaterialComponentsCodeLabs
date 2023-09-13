@@ -18,6 +18,8 @@ import 'home.dart';
 import 'login.dart';
 import 'colors.dart';
 import 'supplemental/cut_corners_border.dart';
+import 'backdrop.dart'; // New code
+import 'model/product.dart'; // New code
 
 final ThemeData _kShrineTheme = _buildShrineTheme();
 
@@ -37,26 +39,25 @@ ThemeData _buildShrineTheme() {
     textSelectionTheme: const TextSelectionThemeData(
       selectionColor: kShrinePink100,
       //selectionColor: kShrinePurple,
-
+    ),
+    appBarTheme: const AppBarTheme(
+      foregroundColor: kShrineBrown900,
+      backgroundColor: kShrinePink100,
     ),
     inputDecorationTheme: const InputDecorationTheme(
       border: CutCornersBorder(),
       focusedBorder: CutCornersBorder(
         borderSide: BorderSide(
           width: 2.0,
-         color: kShrineBrown900,
+          color: kShrineBrown900,
           //color: kShrinePurple,
-
         ),
       ),
       floatingLabelStyle: TextStyle(
         color: kShrineBrown900,
         //color: kShrinePurple,
-
       ),
     ),
-
-
   );
 }
 
@@ -98,7 +99,16 @@ class ShrineApp extends StatelessWidget {
       routes: {
         '/login': (BuildContext context) => const LoginPage(),
         // TODO: Change to a Backdrop with a HomePage frontLayer (104)
-        '/': (BuildContext context) => const HomePage(),
+        '/': (BuildContext context) => Backdrop(
+              // TODO: Make currentCategory field take _currentCategory (104)
+              currentCategory: Category.all,
+              // TODO: Pass _currentCategory for frontLayer (104)
+              frontLayer: HomePage(),
+              // TODO: Change backLayer field value to CategoryMenuPage (104)
+              backLayer: Container(color: kShrinePink100),
+              frontTitle: Text('SHRINE'),
+              backTitle: Text('MENU'),
+            ),
         // TODO: Make currentCategory field take _currentCategory (104)
         // TODO: Pass _currentCategory for frontLayer (104)
         // TODO: Change backLayer field value to CategoryMenuPage (104)

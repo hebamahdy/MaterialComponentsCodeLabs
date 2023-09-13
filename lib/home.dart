@@ -89,7 +89,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: Return an AsymmetricView (104)
     // TODO: Pass Category variable to AsymmetricView (104)
-    return Scaffold(
+    /*return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(
@@ -128,12 +128,15 @@ class HomePage extends StatelessWidget {
         products: ProductsRepository.loadProducts(Category.all),
       )*/
        GridView.count(
-        crossAxisCount: 2,
+       crossAxisCount: 2,
         padding: const EdgeInsets.all(16.0),
         childAspectRatio: 8.0 / 9.0,
         children:  _buildGridCards(context),
       ),
       resizeToAvoidBottomInset: false,
-    );
+    );*/
+
+    return AsymmetricView(products: ProductsRepository.loadProducts(Category.all));
+
   }
 }
