@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'model/product.dart';
 const double _kFlingVelocity = 2.0;
-const double _kFlingVelocity = 2.0;
 
 class Backdrop extends StatefulWidget {
   final Category currentCategory;

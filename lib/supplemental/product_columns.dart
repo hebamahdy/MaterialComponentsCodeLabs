@@ -114,7 +114,6 @@ class OneProductCardColumn extends StatelessWidget {
         const SizedBox(
           height: 40.0,
         ),
-
       ],
     );
   }
