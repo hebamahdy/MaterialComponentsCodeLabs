@@ -21,9 +21,10 @@ import 'supplemental/asymmetric_view.dart';
 
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+ // const HomePage({Key? key}) : super(key: key);
+  const HomePage({this.category = Category.all, Key? key}) : super(key: key);
 
-  // TODO: Add a variable for Category (104)
+  final Category category;
 
 // Replace this entire method
   List<Card> _buildGridCards(BuildContext context) {
@@ -136,7 +137,7 @@ class HomePage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
     );*/
 
-    return AsymmetricView(products: ProductsRepository.loadProducts(Category.all));
+    return AsymmetricView(products: ProductsRepository.loadProducts(category));
 
   }
 }
